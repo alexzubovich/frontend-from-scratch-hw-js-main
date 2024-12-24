@@ -9,5 +9,3 @@ while (counter < 20) {
     sum = sum + counter + 1;
     counter += 1;
 }
-
-console.log(sum);
