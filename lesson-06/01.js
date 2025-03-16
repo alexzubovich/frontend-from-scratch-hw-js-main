@@ -17,3 +17,26 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
+
+let imageIndex = 0;
+
+window.addEventListener('load', () => {
+  const nextBtn = document.getElementById('next-button');
+  const prevBtn = document.getElementById('prev-button');
+  const imagesContainer = document.getElementById('web-tech-image');
+
+  nextBtn.addEventListener('click', () => {
+    imageIndex = (imageIndex === WEB_TECH_IMAGES.length - 1) ? 0 : ++imageIndex;
+    changeImage(imageIndex);
+  })
+
+  prevBtn.addEventListener('click', () => {
+    imageIndex = (imageIndex === 0) ? WEB_TECH_IMAGES.length - 1 : --imageIndex;
+    changeImage(imageIndex);
+  })
+
+  function changeImage(index) {
+    imagesContainer.setAttribute('src', WEB_TECH_IMAGES[index]);
+  }
+})
+
