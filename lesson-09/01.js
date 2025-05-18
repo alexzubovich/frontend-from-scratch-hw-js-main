@@ -30,4 +30,5 @@ const filter = (array, callback) => {
             filteredArray.push(item);
         }
     })
+    return filteredArray;
 }
